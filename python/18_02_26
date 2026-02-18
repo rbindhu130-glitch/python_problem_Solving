@@ -15,3 +15,15 @@ print(vowels("indhu"))
 print(vowels("yalini"))        
 print(vowels("ranjini"))
 print(vowels("anu"))   
+
+
+
+def streck_occ(streck):
+    if len(streck)==0:
+        return "Invalid Input"
+    else:
+        count=0
+        for i in range(0,len(streck)-2,+1):
+            if streck[i] > streck[i+1] and streck [i+1] > streck [i+2]:
+                count=count+1
+        return(count)
