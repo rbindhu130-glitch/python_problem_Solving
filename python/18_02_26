@@ -27,3 +27,5 @@ def streck_occ(streck):
             if streck[i] > streck[i+1] and streck [i+1] > streck [i+2]:
                 count=count+1
         return(count)
+
+print(streck_occ(50,49,47,48,39,37,35))
