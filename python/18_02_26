@@ -19,13 +19,17 @@ print(vowels("anu"))
 
 
 def streck_occ(streck):
-    if len(streck)==0:
+    if len(streck) < 3:
         return "Invalid Input"
-    else:
-        count=0
-        for i in range(0,len(streck)-2,+1):
-            if streck[i] > streck[i+1] and streck [i+1] > streck [i+2]:
-                count=count+1
-        return(count)
+    count = 0
+    i = 0
+    while i < len(streck) - 2:
+        if streck[i] > streck[i+1] > streck[i+2]:
+            count += 1
+            i += 3  # skip to avoid overlapping
+        else:
+            i += 1
+    return count
 
-print(streck_occ(50,49,47,48,39,37,35))
+print(streck_occ([50,49,47,48,39,37,35]))
+
