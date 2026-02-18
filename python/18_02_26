@@ -1,0 +1,17 @@
+def vowels(word):
+    if len(word)==0:
+        return "Invalid input"
+    else:
+        res=[]
+        for i in range(0,len(word),+1):
+            if word[i] in "aeiou":
+                if word[i] not in res:
+                    res+=word[i]
+        return(len(res))    
+        
+print(vowels("apple"))
+print(vowels("cool"))     
+print(vowels("indhu"))
+print(vowels("yalini"))        
+print(vowels("ranjini"))
+print(vowels("anu"))   
