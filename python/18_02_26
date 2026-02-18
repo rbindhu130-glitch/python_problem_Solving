@@ -33,3 +33,21 @@ def streck_occ(streck):
 
 print(streck_occ([50,49,47,48,39,37,35]))
 
+
+def max_a(word):
+    if len(word)==0:
+        return "Invalid Input"
+    else:
+    a_count=0,max_count=0, ans = word[0]
+    for i in range(0,len(word[i],+1):
+        for j in range(0,len(word[i]),+1):
+            if word[i][j] =="a":
+                a_count+=1
+        if a_count>max_count:
+            max_count = a_count
+            ans = word[i]
+    return(ans)
+print(max_a("apple"))
+print(max_a("applea"))
+print(max_a("yalini"))
+
