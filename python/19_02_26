@@ -1,1 +1,73 @@
+# n = 5
 
+# for i in range(n):
+#     for ch in range(i):
+#         print(" ", end="")
+#     print(n - i)
+
+
+
+# n = 3
+
+# # upper part
+# for i in range(1, n + 1):
+#     print(" " * (n - i), end="")
+#     print("*", end="")
+#     if i > 1:
+#         print(" " * (2*i - 3) + "*")
+#     else:
+#         print()
+
+# # lower part
+# for i in range(n - 1, 0, -1):
+#     print(" " * (n - i), end="")
+#     print("*", end="")
+#     if i > 1:
+#         print(" " * (2*i - 3) + "*")
+#     else:
+#         print()
+
+
+
+# str ="Abc def"
+# word=""
+# output=""
+# for i in range(len(str)):
+#     if str[i] !=" ":
+#         word=word+str[i]
+#     else:
+#         output = output + word[::-1] + " "
+#         word = ""  
+
+# output=output+word[::-1]       
+# print(output)        
+
+def anagrams(left, right):
+    if len(left) != len(right):
+        return False   # better than string
+
+    count = {}
+
+    # +1 for left
+    for ch in left:
+        if ch in count:
+            count[ch] += 1
+        else:
+            count[ch] = 1
+
+    # -1 for right
+    for ch in right:
+        if ch not in count:
+            return False
+        count[ch] -= 1
+
+    # final check
+    for ch in count:
+        if count[ch] != 0:
+            return False
+
+    return True
+
+print(anagrams("listen", "silent"))  # True
+print(anagrams("aab", "aba"))        # True
+print(anagrams("aab", "abb"))        # False
