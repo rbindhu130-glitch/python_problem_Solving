@@ -1,0 +1,54 @@
+# Function to find the first non-repeating character in a string
+def non_repeat(word):
+    if len(word) == 0:
+        return "Invalid input"
+    
+    count = {}
+    for char in word:
+        if char in count:
+            count[char] += 1
+        else:
+            count[char] = 1
+    
+    for char in word:
+        if count[char] == 1:
+            return char
+    
+    return None
+
+print(non_repeat("aabbc"))  # Output: 'c'
+
+
+# Function to find the single element in a list where others repeat
+def single(nums):
+    if len(nums) == 0:
+        return "Invalid input"
+    
+    count = {}
+    for num in nums:
+        if num in count:
+            count[num] += 1
+        else:
+            count[num] = 1
+    
+    for num in nums:
+        if count[num] == 1:
+            return num
+    
+    return None
+
+print(single([1, 1, 2, 5, 5]))  # Output: 2
+
+
+# Function to move all zeros to the end of a list
+def zero(nums):
+    if len(nums) == 0:
+        return "Invalid input"
+    
+    result = [num for num in nums if num != 0]  # Non-zero elements
+    zeros = [0] * (len(nums) - len(result))     # All zeros
+    result.extend(zeros)
+    
+    return result
+
+print(zero([1, 0, 2, 0, 12]))  # Output: [1, 2, 12, 0, 0]
