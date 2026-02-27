@@ -1,0 +1,22 @@
+# def single_occ(nums):
+#     if len(nums)==0:
+#         return "invalid input"
+#     else:
+        
+#         for i in range(0,len(nums),+1):
+#             for j in range(0,len(nums),+1):
+#                 if nums[i] == nums[j] and i!=j:
+#                     break
+#             else:
+#                 return nums[i]        
+                    
+# print(single_occ([1,1,2,5,5,2,3]))
+
+
+def duplicate(nums):
+    for i in range(0,len(nums),+1):
+        for j in range(i+1,len(nums),+1):
+            if nums[i]==nums[j]:
+                return True
+    return False        
+print(duplicate([1,2,11,23,1,34]))
